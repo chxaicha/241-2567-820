@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .button {
+            background-color:antiquewhite;
+            padding: 10px;
+            border: 0;
+        }
+        .button:hover {
+            background-color:aquamarine;
+        }
+        .button:active {
+            background-color: red;
+        }
+        .button:focus {
+            background-color:thistle;
+        }
+        input:focus {
+            background-color:pink;
+        }
+        .container .item:first-child {
+            background-color:lavenderblush;
+        }
+        .container .item:nth-child(4) {
+            background-color:lavender;
+        }
+        .container .item:last-child {
+            background-color:lightsteelblue;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1. -->
+     <input type="text">
+    <button class="button">Button</button>
+
+    <div class="container">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item5</div>
+    </div>
+
+</body>
+</html>

@@ -1,37 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        /*สิ่งที่อยู่ตรงนี้ มีไว้ให้ dev อ่าน*/
+        /*1. แต่งใคร ? (id, class, DOM) 2. แต่งอะไร ?*/
+        @font-face {
+            font-family: 'kanit';
+            src: url('./Kanit/Kanit-Regular.ttf')
+        } 
+        body {
+            background-color :lightskyblue;
+        }
+        html {
+            font-size: 20px;
+        }
+         #register {
+                color :lightpink ;
+                font-weight: 800;
+                padding-top : 10px ;
+                padding-bottom: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                background-color: honeydew;
+
+                padding-left: 20px;
+                border : 1px solid green;
+            } 
+        .header-form {
+            font-weight: 800;
+        } 
+        .gender {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        .left {
+            float: left;
+        }
+        .right {
+            float: right;
+        }
+        .box {
+            height: 20px;
+            width: 50vw;
+            background-color: lightcyan;
+        }
+        .container {
+            fron-siza : 18px;
+        }
+        #register {
+            font-size: 2rem;
+        }
+
+    </style>   
 </head>
 <body>
-    <h1>Register form</h1>
-    ชื่อ<input type="text"> <br>
-    นามสกุล<input type="text"> <br>
-    อายุ<input type="number" min="0" max="150">
-<div>
-    เพศ
-    <div>
-        <input name="gender" type="radio">ชาย
+    <div class="right">
+        <img src="https://picsum.photos/id/237/200/300">
     </div>
-    <div>
-        <input name="gender" type="radio">หญิง
+    <div class="left">
+        Test
     </div>
-    <div>
-        <input name="gender" type="radio">อื่นๆ
-    </div>
-    สิ่งที่สนใจ
-    <div>
-        <input name="interest" type="checkboox">เรียน
-    </div>
-    <div>
-        <input name="interest" type="checkboox">เล่นเกม
-    </div>
-    <div>
-        <input name="interest" type="checkboox">อ่านหนังสือ
-    </div>
-</div>
+</body>
 
+<body>
+    <div class="box"></div>
+    <div class="content">
+    <div id="register">
+        register form
+        </div>
+    </div>
+</body>
+
+</div>
+<body> 
+    <span class="header-form">ชื่อ</span>
+    <input class="from" type="text"> 
+    <span class="header-form">นามสกุล</span>
+    <input class="from" type="text"> <br>
+    อายุ<input class="from" type="number"  min="0" max="150">
+    <div class="dender">
+        เพศ
+        <div class="gender">
+             <input name="gender" type="radio">ชาย 
+        </div>
+        <div class="gender">
+            <input name="gender" type="radio">หญิง
+        </div>
+        <div class="gender">
+            <input name="gender" type="radio">อื่นๆ
+        </div>
+    </div>
+    <div>
+        สิ่งที่สนใจ
+         <div>
+            <input name="interest" type="checkbox">เรียน
+         </div>
+         <div>
+            <input name="interest" type="checkbox">เล่นเกม
+         </div>
+         <div>
+            <input name="interest" type="checkbox">อ่านหนังสือ
+         </div>
+    </div>
+    <div>
+        คำอธิบายตัวเอง
+        <textarea></textarea>
+     </div>
+     <button>ส่งข้อมูล</button>
 </body>
 </html>
