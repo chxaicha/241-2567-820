@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<body>
+    <div>
+        <h2>สิ่งที่สนใจ</h2>
+        <div id="content"></div>
+    </div>
+
+    <input type="checkbox" name="interest" value="กีฬา"> กีฬา
+    <input type="checkbox" name="interest" value="ดนตรี"> ดนตรี
+    <input type="checkbox" name="interest" value="อาหาร"> อาหาร
+    <input type="checkbox" name="interest" value="เทคโนโลยี"> เทคโนโลยี
+    <button onclick="submitInterest()">สิ่งที่สนใจ</button>
+    <script>
+        function submitInterest() {
+            // เลือกไปยัง checkbox ทั้งหมด
+            let interestDOM = document.querySelectorAll('input[name="interest"]');
+            let contentHTML = '<ul>';
+            // เอาค่าออกมาเฉพาะที่เลือก
+            for (let i = 0; i < interestDOM.length; i++) {
+                if (interestDOM[i].checked) {
+                    contentHTML += '<li>' + interestDOM[i].value + '</li>';
+                }
+            }
+            // วนค่าตัวที่เลือกใส่ html กลับเข้าไป
+            contentHTML += '</ul>';
+            console.log(contentHTML);
+
+            //เอาค่าที่เลือกไปแสดง
+            let contentDOM = document.getElementById('content');
+            contentDOM.innerHTML = contentHTML;
+        }
+    </script>
+</body>
+</html>
