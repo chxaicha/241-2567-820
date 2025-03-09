@@ -1,0 +1,18 @@
+docker -v
+docker ps
+docker ps --all
+docker run hello-word
+docker rm //ลบ
+docker rum -p 80:80 nginx
+docker rum -p 80:80 nginx
+docker stop container_id
+docker rm container_id
+docker exec -it
+
+linux comand
+Is
+pwd
+cd
+cd .. 
+cd /etc/nginx 
+cat file_name

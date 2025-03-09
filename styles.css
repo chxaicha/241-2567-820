@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'kanit';
     src: url('./Kanit/Kanit-Regular.ttf');
-} 
+}
 
 body {
     font-family: 'kanit';
@@ -11,7 +11,7 @@ body {
     max-width: 640px;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgb(155, 178, 243);
+    background-color: rgba(200, 197, 247, 0.541);
     padding: 20px;
     box-sizing: border-box;
 }
@@ -30,7 +30,7 @@ body {
     margin-bottom: 10px;
 }
 input.form, textarea {
-    border: 1px solid black;
+    border: 1px solid rgb(216, 208, 248);
     width: 100%;
 }
 .center {
@@ -38,19 +38,32 @@ input.form, textarea {
 }
 .button {
     border: 0;
-    width: 100%;
-    background-color: rgb(243, 181, 243);
+    width: 50%;
+    background-color: rgb(250, 194, 194);
     height: 40px;
+}
+.message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgb(228, 250, 223);
+    display: none;
+}
+.message.success {
+    background-color: rgb(243, 248, 213);
+    display: block;
+}
+.message.danger {
+    background-color: rgb(185, 223, 248);
+    display: block;
 }
 @media screen and (max-width: 768px) {
     .flex {
-        flex-direction: column;
+       flex-direction: column;
     }
     .header {
         font-size: 24px;
     }
     .button {
-        width: 100%;
+       width: 100%;
     }
 }
-
