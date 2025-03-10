@@ -1,3 +1,56 @@
+const BASE_URL = "http://localhost:8000";
+let mode = 'CREATE';
+let selectedID = ''
+
+window.onload = async () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    selectedID = urlParams.get('id');
+    console.log('id', id)
+
+    if (id) {
+        mode = 'EDIT';
+        selectedID = id
+        //1. เราจะดึงข้อมูล user ที่ต้องการแก้ไขออกมา
+        try{
+            const response = await axios.get(`${BASE_URL}/users/${id}`)
+            console.log('response', response.data)
+
+        let firstNameDOM = document.querySelector('input[name = firstname]')
+        let lastNameDOM = document.querySelector('input[name =lastname]')
+        let ageDOM = document.querySelector('input[name =age]')
+        let genderDOM = document.querySelector('input[name= gender]:checked')
+        let description = document.querySelector('input[name=interest]:checked')
+
+        let genderDOMs = document.querySelectorAll('input[name=description]')
+        let interestDOMs = document.querySelectorAll('input'[name=interest])
+        console.log('interestDOMs', interestDOMs)
+
+        for (let i = 0; i < genderDOMs.length; i++) {
+            if (genderDOMs[i].value == user.gender) {
+                genderDOMs[i].checked = true
+            }
+        }
+
+        for (let i = 0; i < interestDOMs.length; i++) {
+            if (user.interests.includes(interestDOMs[i].value)) {
+                interestDOMs[i].checked = true
+            }
+        }
+
+        firstNameDOM.value = user.firstname
+        lastNameDOM.value = user.lastname
+        ageDOM.value = user.data
+        descriptionDOM.value = user.description
+
+        } catch (error) {
+            console.log('error', error)
+        }
+
+        //2. นำข้อมูล user ที่ดึงมาใส่ใน input
+    }
+}
+
+
 const validateData = (userData) => {
     let errors = [];
 
@@ -25,14 +78,6 @@ const validateData = (userData) => {
 };
 
 const submitData = async () => {
-    let firstNameDOM = document.querySelector('input[name = firstname]');
-    let lastNameDOM = document.querySelector('input[name =lastname]');
-    let ageDOM = document.querySelector('input[name =age]');
-    let genderDOM = document.querySelector('input[name= gender]:checked');
-    let interestDOMs = document.querySelectorAll('input[name=interest]:checked');
-    let descriptionDOM = document.querySelector('textarea[name=description]');
-    let messageDOM = document.querySelector('.message');
-
     try {
         let interest = '';
         if (interestDOMs && interestDOMs.length > 0) { // ตรวจสอบว่ามี interests ถูกเลือกหรือไม่
@@ -64,10 +109,20 @@ const submitData = async () => {
             };
         }
 
-        const response = await axios.post('http://localhost:8000/users', userData);
-        console.log('response', response.data);
-        messageDOM.innerText = 'บันทึกข้อมูลเรียบร้อย';
-        messageDOM.className = 'message success';
+        let message = 'บันทึกข้อมูลเรียบร้อย'
+
+        if (mode === 'CREATE') {
+            const response = await axios.post('${BASSE_URL}/user', userData); 
+            console.log('response', response.data);
+        } else {
+            const response = await axios.put('${BASSE_URL}/user/${selectedID}', userData);
+            message = 'แก้ไขข้อมูลเรียบร้อย'
+            console.log('response', response.data);
+        }
+
+        messageDOM.innerText = massage
+        messageDOM.className = 'message success'
+
     } catch (error) {
         console.log('error message', error.message);
         console.log('error ', error.errors);

@@ -11,7 +11,7 @@ body {
     max-width: 640px;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgba(200, 197, 247, 0.541);
+    background-color: rgb(217, 217, 247);
     padding: 20px;
     box-sizing: border-box;
 }
@@ -30,7 +30,7 @@ body {
     margin-bottom: 10px;
 }
 input.form, textarea {
-    border: 1px solid rgb(216, 208, 248);
+    border: 1px solid black;
     width: 100%;
 }
 .center {
@@ -39,21 +39,21 @@ input.form, textarea {
 .button {
     border: 0;
     width: 50%;
-    background-color: rgb(250, 194, 194);
+    background-color: rgb(239, 202, 247);
     height: 40px;
 }
 .message {
     margin-top: 20px;
     padding: 10px;
-    background-color: rgb(228, 250, 223);
+    background-color: rgb(182, 150, 184);
     display: none;
 }
 .message.success {
-    background-color: rgb(243, 248, 213);
+    background-color: rgb(200, 240, 200);
     display: block;
 }
 .message.danger {
-    background-color: rgb(185, 223, 248);
+    background-color: rgb(238, 180, 180);
     display: block;
 }
 @media screen and (max-width: 768px) {
